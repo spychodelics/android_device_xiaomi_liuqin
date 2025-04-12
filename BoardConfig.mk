@@ -1,0 +1,31 @@
+# Platform
+TARGET_BOARD_PLATFORM := sm8475
+TARGET_BOOTLOADER_BOARD_NAME := liuqin
+BOARD_VENDOR := xiaomi
+
+# Kernel
+TARGET_KERNEL_ARCH := arm64
+TARGET_KERNEL_HEADER_ARCH := arm64
+BOARD_KERNEL_IMAGE_NAME := Image.gz
+TARGET_PREBUILT_KERNEL := device/xiaomi/liuqin/kernel
+
+# Boot image
+BOARD_BOOTIMG_HEADER_VERSION := 3
+BOARD_KERNEL_CMDLINE := console=ttyMSM0,115200n8 earlycon=msm_geni_serial,0x04C3D000 androidboot.console=ttyMSM0
+BOARD_MKBOOTIMG_ARGS := --header_version $(BOARD_BOOTIMG_HEADER_VERSION)
+BOARD_INCLUDE_DTB_IN_BOOTIMG := true
+
+# Recovery
+BOARD_USES_RECOVERY_AS_BOOT := true
+BOARD_BUILD_SYSTEM_ROOT_IMAGE := false
+
+# A/B
+AB_OTA_UPDATER := true
+BOARD_USES_METADATA_PARTITION := true
+
+# Filesystem
+BOARD_FLASH_BLOCK_SIZE := 131072 # (128 KB)
+
+# System as root
+BOARD_ROOT_EXTRA_FOLDERS := bluetooth dsp firmware persist
+BOARD_SUPPRESS_SECURE_ERASE := true
