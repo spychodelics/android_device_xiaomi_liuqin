@@ -1,6 +1,9 @@
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base.mk)
 $(call inherit-product, device/xiaomi/liuqin/device.mk)
 
+# LineageOS-typische Konfiguration
+$(call inherit-product, vendor/lineage/config/common_full_phone.mk)
+
 PRODUCT_NAME := lineage_liuqin
 PRODUCT_DEVICE := liuqin
 PRODUCT_BRAND := Xiaomi

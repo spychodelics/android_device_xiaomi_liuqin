@@ -1,0 +1,5 @@
+type vendor_camera_server, domain;
+type vendor_camera_exec, exec_type, file_type;
+
+allow vendor_camera_server self:process set_sched;
+allow vendor_camera_server vendor_camera_exec:file { execute read open getattr map };

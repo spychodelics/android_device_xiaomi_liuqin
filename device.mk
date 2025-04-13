@@ -21,13 +21,17 @@ PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
 TARGET_BOARD_PLATFORM := sm8475
 
 # Audio
-#PRODUCT_COPY_FILES += \
-#    $(LOCAL_PATH)/audio/audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_policy_configuration.xml
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/audio/audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_policy_configuration.xml
 
-# Kamera / Media
-#PRODUCT_COPY_FILES += \
-#    $(LOCAL_PATH)/media/media_profiles.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_profiles.xml
+# Kamera (wenn vorhanden)
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/media/media_profiles.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_profiles.xml
 
-# USB
-#PRODUCT_COPY_FILES += \
-#    $(LOCAL_PATH)/rootdir/etc/init.mi.usb.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.mi.usb.rc
+# USB (für Charging / OTG / Debugging)
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/rootdir/etc/init.mi.usb.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.mi.usb.rc
+
+# Display config (falls blob vorhanden)
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/display/display_id_0.xml:$(TARGET_COPY_OUT_VENDOR)/etc/displayconfig/display_id_0.xml
