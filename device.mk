@@ -19,3 +19,15 @@ PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
 
 # SoC
 TARGET_BOARD_PLATFORM := sm8475
+
+# Audio
+#PRODUCT_COPY_FILES += \
+#    $(LOCAL_PATH)/audio/audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_policy_configuration.xml
+
+# Kamera / Media
+#PRODUCT_COPY_FILES += \
+#    $(LOCAL_PATH)/media/media_profiles.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_profiles.xml
+
+# USB
+#PRODUCT_COPY_FILES += \
+#    $(LOCAL_PATH)/rootdir/etc/init.mi.usb.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.mi.usb.rc
